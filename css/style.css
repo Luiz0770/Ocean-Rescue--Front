@@ -34,7 +34,7 @@ header {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 3em;
     z-index: 100;
@@ -112,7 +112,7 @@ header {
 }
 
 #problema svg {
-    margin-top: -30px;
+    margin-top: -20px;
 }
 
 .problema {
@@ -138,6 +138,10 @@ header {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 2rem;
+
+    p {
+        font-size: clamp(1rem, 1vw, 30px) 
+    }
 }
 
 .problema-text h3 {
@@ -285,7 +289,7 @@ header {
 
 .card .content {
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     padding: 20px;
     page-break-after: 20px;
     text-align: center;
@@ -330,7 +334,7 @@ header {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 4em;
+    gap: 3em;
     padding: 3em;
     background-color: var(--background-body-darkest);
 
@@ -371,6 +375,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
 }
 
 .beneficios-container h3 {
@@ -420,6 +425,10 @@ header {
 
 #ajuda svg {
     margin-bottom: -10px;
+}
+
+#ajuda .problema-text h3 {
+    font-size: 2em;
 }
 
 /* ======== fim ajuda ======== */
@@ -519,32 +528,32 @@ header {
 
 /* ======== fim footer ======== */
 
-/* ======== media query ======== */
+/* ======== Media query ======== */
 
-/* ======== Media Queries ======== */
+@media screen and (max-width: 1100px) {
 
-@media screen and (max-width: 1200px) {
+    /* ======== header ======== */
 
-    /* ======== solucao ======== */
+    header h2{
+        display: none;
+    }
 
-    .solucao-photo img {
+    .navigation{
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* ======== fim solucao ======== */
-
-    /* ======== beneficios ======== */
-
-    .beneficios-topicos {
-        width: 90%;
+    .navigation a {
+        margin: 10px;
     }
 
-    /* ======== fim beneficios ======== */
-}
-
-@media screen and (max-width: 1024px) {
-
+    /* ======== fim header ======== */
+    
     /* ======== problema ======== */
+    
     .problema-container {
         flex-direction: column;
         text-align: center;
@@ -588,10 +597,17 @@ header {
     /* ======== fim solucao ======== */
 
     /* ======== cards ======== */
+    
+    .cards-container{
+        text-align: center;
+    }
+
+    .cards-container .cards-title {
+        font-size: 1.5em;
+    }
+
 
     /* ======== fim cards ======== */
-
-
 
     /* ======== publico ======== */
 
@@ -601,19 +617,19 @@ header {
 
     .publico-container {
         flex-direction: column;
-        height: 120vh;
+        height: 100vh;
+        text-align: center;
     }
 
     .publico-text {
         width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
     .publico-photo {
-        width: 70%;
-    }
-
-    .publico-photo img {
-        width: 90%;
+        display: none;
     }
 
     /* ======== fim publico ======== */
@@ -626,6 +642,7 @@ header {
 
     .beneficios-topicos {
         flex-direction: column;
+        align-items: center;
     }
 
     .topico {
@@ -654,3 +671,87 @@ header {
 
     /* ======== fim footer ======== */
 }
+
+@media screen and (max-width: 650px)  {
+    
+    /* ======== cabecalho ======== */
+
+    .navigation a {
+        font-size: 1.5vh;
+    }
+
+    /* ======== fim cabecalho ======== */
+
+    /* ======== parallax ======== */
+
+    #parallax-text {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 3em;
+    }
+
+    /* ======== fim parallax ======== */
+
+
+    /* ======== problema ======== */
+
+    .problema-photo{
+        display: none;
+    }
+
+    .problema-text h3 {
+        font-size: 2em;
+    }
+
+    /* ======== fim problema ======== */
+
+    /* ======== publico ======== */
+
+    .publico-text{
+        gap: 1.2em;
+    }
+
+    /* ======== fim publico ======== */
+
+    /* ======== beneficios ======== */
+    
+    .topico{
+        padding: 1em;
+        }
+
+    /* ======== fim beneficios ======== */
+}
+
+@media screen and (max-width: 550px)  {
+
+    /* ======== solucao ======== */
+
+    .solucao-photo {
+        display: none;
+    }
+
+    .solucao-text {
+        width: 100%;
+    }
+
+    /* ======== fim solucao ======== */
+    
+    /* ======== beneficios ======== */
+    
+    .beneficios-container h3 {
+        font-size: 1.5em;
+        border: none;
+    }
+
+    .topico {
+        text-align: center;
+    }
+
+    .topico i {
+        display: none;
+    }
+
+    /* ======== fim beneficios ======== */
+}
+
+/* ======== Fim Media Queries ======== */
